@@ -25,7 +25,7 @@ namespace QLabs
 
         private void MenuCredits_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("QLabs 1.0.0\nCreated by Mykhailo Masliukh.\nThis app is free to use.\n\nLviv 2020", "Credits", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("QLabs 1.0.0\nCreated by Mykhailo Masliukh.\nThis app is free to use.\n\nUkraine, Lviv, 2020", "Credits", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void MenuHelp_Click(object sender, RoutedEventArgs e)
@@ -39,9 +39,12 @@ namespace QLabs
             {
                 NewWindow newWindow = new NewWindow();
                 newWindow.ShowDialog();
-                ReadDatabase();
-                UpdateTextBlock();
-                CheckButtons();
+                if (App.fPath != null)
+                {
+                    ReadDatabase();
+                    UpdateTextBlock();
+                    CheckButtons();
+                }
             }
         }
 
